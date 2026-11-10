@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 300" font-family="system-ui, sans-serif">
+<path d="M70 70C110 30 210 25 255 65S300 190 250 240 100 275 60 225 30 110 70 70Z" fill="#dce5d6" stroke="#8fa98a" stroke-width="3"/>
+<path d="M150 0C140 60 160 100 150 150S135 240 160 300" stroke="#9fbcc4" stroke-width="16" fill="none" stroke-linecap="round"/>
+<text x="95" y="150" font-size="18" font-weight="700" fill="#1f4128">Buda</text><text x="190" y="150" font-size="18" font-weight="700" fill="#1f4128">Pest</text>
+<circle cx="70" cy="245" r="7" fill="#9a4e2c"/><text x="20" y="275" font-size="13" fill="#1f2a22">Budaörs, Törökbálint</text>
+<circle cx="135" cy="22" r="7" fill="#9a4e2c"/><text x="40" y="26" font-size="13" fill="#1f2a22">Szentendre</text>
+<circle cx="205" cy="125" r="5" fill="#2f5d3a"/><circle cx="120" cy="120" r="5" fill="#2f5d3a"/><circle cx="215" cy="185" r="5" fill="#2f5d3a"/><circle cx="110" cy="190" r="5" fill="#2f5d3a"/><circle cx="180" cy="95" r="5" fill="#2f5d3a"/>
+</svg>

@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kapcsolat és ajánlatkérés – ZöldPont Irodakert (fiktív)</title>
+<meta name="description" content="Kérjen ingyenes helyszíni felmérést irodai növényekhez. Bemutató űrlap, fiktív elérhetőségek, impresszum és adatkezelési tájékoztató.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#2f5d3a">
+<link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script src="/assets/js/main.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#tartalom">Ugrás a tartalomra</a>
+<div class="fiction-bar">
+  <p class="container"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5h.01"/></svg><span>Bemutató oldal: a ZöldPont Irodakert <strong>fiktív vállalkozás</strong>, az itt szereplő adatok kitaláltak.</span></p>
+</div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="/"><svg viewBox="0 0 64 64" width="36" height="36" aria-hidden="true" focusable="false"><circle cx="32" cy="32" r="30" fill="#2f5d3a"/><path d="M18 44C20 26 32 16 48 15C48 32 38 44 22 45Z" fill="#dce5d6"/><path d="M20 44C27 36 33 30 42 22" fill="none" stroke="#2f5d3a" stroke-width="2.5" stroke-linecap="round"/><circle cx="45" cy="45" r="5" fill="#f2c79b"/></svg><span>ZöldPont<span class="logo__sub">Irodakert</span></span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="fomenu">
+      <svg class="nav-toggle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 6h16"/><path class="nav-toggle__bar--mid" d="M4 12h16"/><path d="M4 18h16"/></svg>
+      <span class="nav-toggle__label">Menü</span>
+    </button>
+    <nav id="fomenu" class="main-nav" aria-label="Főmenü">
+      <ul>
+          <li><a href="/szolgaltatasok">Szolgáltatások</a></li>
+          <li><a href="/projektek">Mintaprojektek</a></li>
+          <li><a href="/rolunk">Rólunk</a></li>
+          <li><a href="/kapcsolat" aria-current="page">Kapcsolat</a></li>
+      </ul>
+      <a class="btn" href="/kapcsolat#ajanlatkeres">Ingyenes felmérést kérek</a>
+    </nav>
+  </div>
+</header>
+<main id="tartalom">
+<section class="page-hero">
+  <img class="page-hero__leaf" src="/assets/img/level.svg" alt="" width="200" height="200">
+  <div class="container">
+    <p class="eyebrow">Kapcsolat</p>
+    <h1>Kérjen ingyenes helyszíni felmérést</h1>
+    <p class="lead">Írjon néhány szót az irodájukról, és egy munkanapon belül visszajelzünk egy lehetséges időponttal.</p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="ajanlatkeres-cim">
+  <div class="container contact-grid">
+    <div id="ajanlatkeres">
+      <h2 id="ajanlatkeres-cim">Ajánlatkérés</h2>
+      <p class="form-note">A <span class="req">*</span> jelölt mezők kitöltése kötelező. <strong>Bemutató űrlap:</strong> a beküldött adatok nem kerülnek továbbításra és tárolásra.</p>
+      <p class="form-note no-js-note">Az űrlap kipróbálásához JavaScript szükséges. Az oldal többi része nélküle is használható.</p>
+      <form class="form" data-demo-form action="/kapcsolat" method="post">
+        <div class="form-row">
+          <div class="field">
+            <label for="nev">Név <span class="req" aria-hidden="true">*</span></label>
+            <input id="nev" name="nev" type="text" autocomplete="name" required aria-describedby="nev-hiba">
+            <p class="field-error" id="nev-hiba"></p>
+          </div>
+          <div class="field">
+            <label for="ceg">Cégnév <span class="req" aria-hidden="true">*</span></label>
+            <input id="ceg" name="ceg" type="text" autocomplete="organization" required aria-describedby="ceg-hiba">
+            <p class="field-error" id="ceg-hiba"></p>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="email">E-mail-cím <span class="req" aria-hidden="true">*</span></label>
+            <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-hiba">
+            <p class="field-error" id="email-hiba"></p>
+          </div>
+          <div class="field">
+            <label for="telefon">Telefonszám</label>
+            <input id="telefon" name="telefon" type="tel" autocomplete="tel" aria-describedby="telefon-tipp telefon-hiba">
+            <p class="hint" id="telefon-tipp">Például: +36 30 123 4567</p>
+            <p class="field-error" id="telefon-hiba"></p>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="meret">Az iroda alapterülete</label>
+            <select id="meret" name="meret">
+              <option value="">Válasszon…</option>
+              <option>100 m² alatt</option>
+              <option>100–300 m²</option>
+              <option>300–600 m²</option>
+              <option>600 m² felett</option>
+              <option>Még nem tudom</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="letszam">Létszám (fő)</label>
+            <input id="letszam" name="letszam" type="number" inputmode="numeric" min="1" max="500" step="1" aria-describedby="letszam-hiba">
+            <p class="field-error" id="letszam-hiba"></p>
+          </div>
+        </div>
+        <fieldset class="field">
+          <legend>Mi érdekli?</legend>
+          <div class="checks">
+            <label class="check"><input type="checkbox" name="erdeklodes" value="tervezes"> Tervezés</label>
+            <label class="check"><input type="checkbox" name="erdeklodes" value="telepites"> Telepítés</label>
+            <label class="check"><input type="checkbox" name="erdeklodes" value="gondozas"> Gondozás</label>
+            <label class="check"><input type="checkbox" name="erdeklodes" value="berles"> Növénybérlés</label>
+          </div>
+        </fieldset>
+        <div class="field">
+          <label for="uzenet">Üzenet</label>
+          <textarea id="uzenet" name="uzenet" rows="5" aria-describedby="uzenet-tipp"></textarea>
+          <p class="hint" id="uzenet-tipp">Például: milyen helyiségekbe szeretnének növényt, és van-e ablaktalan rész.</p>
+        </div>
+        <div class="field">
+          <label class="check check--consent"><input id="hozzajarulas" name="adatkezeles" type="checkbox" required aria-describedby="adatkezeles-hiba"> <span>Elolvastam és elfogadom az <a href="#adatkezeles">adatkezelési tájékoztatót</a>. <span class="req" aria-hidden="true">*</span></span></label>
+          <p class="field-error" id="adatkezeles-hiba"></p>
+        </div>
+        <div id="urlap-allapot" class="form-status" role="status" tabindex="-1"></div>
+        <div><button class="btn" type="submit" disabled>Ajánlatkérés elküldése</button></div>
+      </form>
+    </div>
+
+    <aside class="card contact-card" aria-labelledby="elerhetoseg-cim">
+      <h2 id="elerhetoseg-cim">Elérhetőségek <span class="tag-fiktiv">fiktív</span></h2>
+      <dl>
+        <div><dt>Iroda és bemutatóterem</dt><dd>1000 Budapest, Minta utca 1.</dd></div>
+        <div><dt>Telefon</dt><dd>+36 1 000 0000</dd></div>
+        <div><dt>E-mail</dt><dd>hello@zoldpont-irodakert.example</dd></div>
+        <div><dt>Ügyfélszolgálat</dt><dd>Hétfő–péntek 8:00–17:00</dd></div>
+        <div><dt>Gondozási sürgősség</dt><dd>Ha egy növény hirtelen rosszul van, írjon nekünk; két munkanapon belül kimegyünk.</dd></div>
+      </dl>
+      <p class="hint">Az elérhetőségek kitaláltak, rajtuk keresztül nem érhető el senki.</p>
+    </aside>
+  </div>
+</section>
+
+<section class="section section--paper" aria-labelledby="impresszum">
+  <div class="container legal">
+    <h2 id="impresszum">Impresszum <span class="tag-fiktiv">fiktív</span></h2>
+    <dl>
+      <dt>Cégnév</dt><dd>ZöldPont Irodakert Kft. (fiktív)</dd>
+      <dt>Székhely</dt><dd>1000 Budapest, Minta utca 1. (fiktív)</dd>
+      <dt>Cégjegyzékszám</dt><dd>00-00-000000 (fiktív)</dd>
+      <dt>Adószám</dt><dd>00000000-0-00 (fiktív)</dd>
+      <dt>E-mail</dt><dd>hello@zoldpont-irodakert.example (fiktív)</dd>
+      <dt>Tárhely</dt><dd>A weboldal a Cloudflare Pages szolgáltatáson fut.</dd>
+    </dl>
+    <p>Ez a weboldal oktatási és bemutató célú. A ZöldPont Irodakert nem létező vállalkozás; az oldal nem minősül ajánlattételnek, és termék vagy szolgáltatás nem rendelhető rajta keresztül.</p>
+
+    <h2 id="adatkezeles">Adatkezelés – röviden</h2>
+    <p>Ez a bemutató oldal <strong>nem gyűjt személyes adatot</strong>:</p>
+    <ul>
+      <li>az ajánlatkérő űrlapba írt adatok nem hagyják el a böngészőjét, és nem tároljuk őket;</li>
+      <li>nem használunk sütiket, látogatottságmérést, hirdetési vagy közösségimédia-kódot;</li>
+      <li>nem töltünk be külső betűtípust, térképet vagy egyéb harmadik féltől származó tartalmat.</li>
+    </ul>
+    <p>A tárhelyszolgáltató az oldal kiszolgálásához és védelméhez technikai naplóadatokat (például IP-címet) kezelhet a saját adatkezelési szabályai szerint.</p>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <a class="logo" href="/"><svg viewBox="0 0 64 64" width="36" height="36" aria-hidden="true" focusable="false"><circle cx="32" cy="32" r="30" fill="#2f5d3a"/><path d="M18 44C20 26 32 16 48 15C48 32 38 44 22 45Z" fill="#dce5d6"/><path d="M20 44C27 36 33 30 42 22" fill="none" stroke="#2f5d3a" stroke-width="2.5" stroke-linecap="round"/><circle cx="45" cy="45" r="5" fill="#f2c79b"/></svg><span>ZöldPont<span class="logo__sub">Irodakert</span></span></a>
+      <p>Irodai növények tervezése, telepítése és gondozása budapesti kis- és középvállalatoknak.</p>
+    </div>
+    <nav aria-label="Lábléc">
+      <h2 class="footer-title">Oldalak</h2>
+      <ul>
+        <li><a href="/">Főoldal</a></li>
+        <li><a href="/szolgaltatasok">Szolgáltatások</a></li>
+        <li><a href="/projektek">Mintaprojektek</a></li>
+        <li><a href="/rolunk">Rólunk</a></li>
+        <li><a href="/kapcsolat">Kapcsolat</a></li>
+      </ul>
+    </nav>
+    <div>
+      <h2 class="footer-title">Elérhetőség <span class="tag-fiktiv">fiktív</span></h2>
+      <address>
+        <p>1000 Budapest, Minta utca 1.</p>
+        <p>+36 1 000 0000</p>
+        <p>hello@zoldpont-irodakert.example</p>
+        <p>Hétfő–péntek 8:00–17:00</p>
+      </address>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p class="fiction-note"><strong>Fiktív vállalkozás.</strong> A ZöldPont Irodakert, az ügyfelei, munkatársai, elérhetőségei, árai és számadatai kitaláltak. Az oldal bemutató és oktatási célt szolgál, ajánlatot nem tartalmaz, és nem gyűjt személyes adatot.</p>
+    <p class="footer-legal">© <span data-year>2026</span> ZöldPont Irodakert (fiktív) · <a href="/kapcsolat#impresszum">Impresszum</a> · <a href="/kapcsolat#adatkezeles">Adatkezelés</a></p>
+  </div>
+</footer>
+</body>
+</html>

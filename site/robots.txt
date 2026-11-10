@@ -1,0 +1,3 @@
+# Fiktív vállalkozás bemutató oldala – keresőrobotok számára nem indexelendő.
+User-agent: *
+Disallow: /
