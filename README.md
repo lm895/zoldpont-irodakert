@@ -7,18 +7,19 @@ A tartalmi terv és az elfogadási feltételek: [`docs/TERV.md`](docs/TERV.md).
 ## Felépítés
 
 ```
-site/                      ← ezt kell közzétenni (Cloudflare Pages kimeneti könyvtár)
+site/                      ← ezt kell közzétenni (wrangler.jsonc → assets.directory)
   index.html               Főoldal
   szolgaltatasok.html      Szolgáltatások, csomagok, GYIK
   projektek.html           4 fiktív esettanulmány, szűrővel
   rolunk.html              Történet, értékek, csapat, működési terület
   kapcsolat.html           Bemutató ajánlatkérő űrlap, impresszum, adatkezelés
-  404.html                 Hibaoldal (Cloudflare Pages automatikusan használja)
+  404.html                 Hibaoldal (not_found_handling: 404-page)
   _headers                 Biztonsági fejlécek (CSP stb.), noindex, cache
   robots.txt               Keresőrobotok kizárása
   assets/css/style.css     Közös stíluslap (mobil-első, CSS-változókkal)
   assets/js/main.js        Mobilmenü, projektszűrő, űrlap-ellenőrzés
   assets/img/*.svg         Saját illusztrációk, logó
+wrangler.jsonc             Cloudflare Workers beállítás
 tests/
   server.mjs               Helyi kiszolgáló, amely a Cloudflare Pages viselkedését utánozza
   check.mjs                Automatikus elfogadási ellenőrzés (Playwright)
@@ -60,26 +61,28 @@ A szkript nem ellenőrzi:
 - **Q5, Lighthouse:** Chrome DevTools → Lighthouse → Mobile. A SEO-kategória „Page is blocked from indexing” jelzése szándékos (noindex).
 - **A2, A7, M2–M4:** kézi ellenőrzés a terv szerint (billentyűzetes bejárás, csökkentett mozgás, nagyítás).
 
-## Közzététel Cloudflare Pagesen
+## Közzététel (Cloudflare Workers)
 
-**A) Git-integráció.** Töltse fel a projektet egy GitHub- vagy GitLab-tárolóba, majd a Cloudflare irányítópultján: *Workers & Pages → Create → Pages → Connect to Git*. Itt válassza ki a tárolót, és állítsa be a következőket:
+Az oldal **Cloudflare Workers statikus fájlkiszolgálással** fut, a GitHub-tárolóhoz kötve. A `main` ágra érkező minden feltöltés után a Cloudflare lefuttatja az `npx wrangler deploy` parancsot, és közzéteszi a `site` mappát. Build lépés nincs.
 
-| Beállítás | Érték |
-|-----------|-------|
-| Framework preset | None |
-| Build command | *(üres)* |
-| Build output directory | `site` |
+- Élő cím: <https://zoldpont-irodakert.t360-v5-cuda-s06.workers.dev>
+- Beállítás: [`wrangler.jsonc`](wrangler.jsonc)
+  - a közzétett mappa a `site`;
+  - a `/kapcsolat` útvonal a `kapcsolat.html` fájlt adja;
+  - nem létező útvonalon a `404.html` jelenik meg, 404-es státusszal.
+- A `site/_headers` fejléceit a Workers is alkalmazza.
+- A buildek állapota az irányítópulton látható: *Workers & Pages → zoldpont-irodakert → Deployments*.
 
-**B) Közvetlen feltöltés.** Az irányítópulton: *Workers & Pages → Create → Pages → Upload assets*, majd töltse fel a `site` mappát. Ugyanez parancssorból:
+Kézi közzététel parancssorból (Cloudflare-bejelentkezés vagy `CLOUDFLARE_API_TOKEN` szükséges):
 
 ```bash
-npx wrangler pages deploy site --project-name zoldpont-irodakert
+npx wrangler deploy
 ```
 
 Közzététel után az élő URL-en ellenőrizze a következőket:
 - `/kapcsolat` betölt;
 - egy nem létező útvonal a 404-es oldalt adja;
-- a `curl -I https://<projekt>.pages.dev/` válaszában szerepelnek a `_headers` fejlécei (Q7, Q8).
+- a `curl -I <élő URL>` válaszában szerepelnek a `_headers` fejlécei (Q7, Q8).
 
 ## Karbantartás
 

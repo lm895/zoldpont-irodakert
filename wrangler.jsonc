@@ -1,0 +1,13 @@
+// Cloudflare Workers – statikus oldal kiszolgálása (Workers Static Assets).
+// A GitHub-integráció a main ágra érkező minden feltöltés után "npx wrangler deploy"-jal közzéteszi.
+{
+  "name": "zoldpont-irodakert",
+  "compatibility_date": "2026-11-10",
+  "assets": {
+    "directory": "./site",
+    // "/kapcsolat" → kapcsolat.html, "/kapcsolat.html" → átirányítás "/kapcsolat"-ra
+    "html_handling": "auto-trailing-slash",
+    // nem létező útvonal → site/404.html, 404-es státusszal
+    "not_found_handling": "404-page"
+  }
+}
